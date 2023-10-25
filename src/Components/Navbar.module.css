@@ -1,0 +1,30 @@
+.navbarContainer {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.navBarLink {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+}
+
+.btnStyle{
+    width: 9rem;
+    height: 3rem;
+}
