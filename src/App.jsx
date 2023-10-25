@@ -10,10 +10,9 @@ import ContextProvider from './Components/utils/global.context';
 import { ContextGlobal } from './Components/utils/global.context'
 
 function App(){
-  /*const {tema} = useContext(ContextGlobal);*/
 
   return (
-      <div className="App" /*style={{background: tema.background, color:tema.font}}*/>
+      <div className="App">
         <ContextProvider>
           <Navbar/>
           <Routes>

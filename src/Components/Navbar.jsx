@@ -8,9 +8,8 @@ import { ContextGlobal } from './utils/global.context'
 
 const Navbar = () => {
   const {tema, cambiarTema} = useContext(ContextGlobal)
-//Outlet
   return (
-    <div className={`navbarContainer ${tema}`}>
+    <div style={{background: tema.background, color:tema.font}}>
     <nav className="navbar">
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <NavLink>
@@ -20,8 +19,7 @@ const Navbar = () => {
             <li className="navBarLink"><Link to={"/contacto"}>Contacto</Link></li>
             <li className="navBarLink"><Link to={"/destacados"}>Destacados</Link></li>
           </ul>
-          <button className="btnStyle" onClick={cambiarTema}
-          style={{background: tema.background, color:tema.font}}> Change theme ☀ 🌙 </button>
+          <button className="btnStyle" onClick={cambiarTema}> Change theme ☀ 🌙 </button>
         </nav>
       </NavLink>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}

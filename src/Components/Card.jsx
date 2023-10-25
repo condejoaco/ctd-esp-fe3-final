@@ -6,19 +6,21 @@ const Card = ({ name, username, id }) => {
 
   const [favoritas, setFavoritas] = useState([]);
   const addFav = ()=>{
+    const favoritasGuardadas = JSON.parse(localStorage.getItem('favoritas')) || [];
+
+    // Crear un objeto representando la tarjeta favorita
     const tarjetaFavorita = { name, username, id };
 
-     // Verificar si la tarjeta favorita ya está en la lista
-  const tarjetaExistente = favoritas.find((favorita) => favorita.id === tarjetaFavorita.id);
-  
-  if (!tarjetaExistente) {
-    // Si no existe, agregarla a la lista
-    const nuevasFavoritas = [...favoritas, tarjetaFavorita];
-    setFavoritas(nuevasFavoritas);
-    
-    // Actualizar el localStorage
-    localStorage.setItem('favoritas', JSON.stringify(nuevasFavoritas));
-  }
+    // Verificar si la tarjeta favorita ya está en la lista
+    const tarjetaExistente = favoritasGuardadas.find((favorita) => favorita.id === tarjetaFavorita.id);
+
+    if (!tarjetaExistente) {
+      // Si no existe, agregarla a la lista de favoritas
+      const nuevasFavoritas = [...favoritasGuardadas, tarjetaFavorita];
+      
+      // Guardar la lista actualizada en el localStorage
+      localStorage.setItem('favoritas', JSON.stringify(nuevasFavoritas));
+    };
   }
 
   return (
@@ -32,7 +34,7 @@ const Card = ({ name, username, id }) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <button onClick={addFav} className="favButton">Agregar a favoritos</button>
     </div>
   );
 };

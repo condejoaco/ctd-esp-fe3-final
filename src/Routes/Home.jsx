@@ -6,11 +6,12 @@ import { ContextGlobal, ContextProvider  } from '../Components/utils/global.cont
 
 const Home = () => {
   const { dentistas } = useContext(ContextGlobal) 
-  
+  const { tema } = useContext(ContextGlobal);
+
   return (
-    <main className="" > 
+    <main className="" style={{ backgroundColor: tema.background, color: tema.font }}> 
       <h1>Home</h1>
-      <div className='card-grid'>
+      <div className='card-grid' >
         {/* Aqui deberias renderizar las cards */}
           {dentistas.map(dentista => (
             <Card 
