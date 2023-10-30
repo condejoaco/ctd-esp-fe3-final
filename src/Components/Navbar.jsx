@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {NavLink, Link} from 'react-router-dom';
-import './Navbar.module.css'
+import './Navbar.css'
 import { ContextGlobal } from './utils/global.context'
 
 
@@ -15,7 +15,7 @@ const Navbar = () => {
       <NavLink>
         <nav>
           <ul className="navbar-nav">
-            <li className="navBarLink"><Link to={"/home"}>Home</Link></li>
+            <li className="navBarLink"><Link to={"/Home"}>Home</Link></li>
             <li className="navBarLink"><Link to={"/contacto"}>Contacto</Link></li>
             <li className="navBarLink"><Link to={"/destacados"}>Destacados</Link></li>
           </ul>

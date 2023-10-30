@@ -6,17 +6,19 @@ import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
 import Contacto from "./Routes/Contact";
 import Destacados from "./Routes/Favs";
-import ContextProvider from './Components/utils/global.context';
-import { ContextGlobal } from './Components/utils/global.context'
+import ContextProvider, {ContextGlobal} from './Components/utils/global.context';
 
-function App(){
-
+function App(){  
+  if (localStorage.length > 0) {
+    localStorage.clear();
+  }
   return (
       <div className="App">
         <ContextProvider>
           <Navbar/>
           <Routes>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/Home' element={<Home/>}/>
           <Route path='/dentist/:id' element={<Detail/>}/>
           <Route path='/contacto' element={<Contacto/>} />
           <Route path='/destacados' element={<Destacados/>} />

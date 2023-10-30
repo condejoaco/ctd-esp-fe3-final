@@ -7,6 +7,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    font-color: black;
+    background: white,
 }
 
 .navbar-nav {
@@ -14,13 +16,4 @@
     list-style: none;
 }
 
-.navBarLink {
-    padding: 5px;
-    border-radius: 9px;
-    transition: all 0.3s ease-in-out;
-}
 
-.btnStyle{
-    width: 9rem;
-    height: 3rem;
-}

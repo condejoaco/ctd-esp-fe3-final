@@ -21,7 +21,7 @@ export const ContextProvider = ({ children }) => {
   const [dentistas, setDentistas] = useState([])
 
   const [tema, setTema] = useState(themes.light)
-  
+
   const getDentistas = async() => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users")
     const data = await res.json()
